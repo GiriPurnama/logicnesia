@@ -146,25 +146,25 @@
             </thead>
             <tbody>
               <tr>
-                <td><a href="#" data-lat="-7.2663" data-lng="112.7063" class="linked">Rahayu</a></td>
+                <td><a href="javascript:void(0);" data-lat="-7.2663" data-lng="112.7063" class="linked">Rahayu</a></td>
               </tr>
               <tr>
-                <td><a href="#" data-lat="-7.2719" data-lng="112.7063" class="linked">Zaenal</a></td>
+                <td><a href="javascript:void(0);" data-lat="-7.2719" data-lng="112.7063" class="linked">Zaenal</a></td>
               </tr>
               <tr>
-                <td><a href="#" data-lat="-7.2719" data-lng="112.7063" class="linked">Zaenal</a></td>
+                <td><a href="javascript:void(0);" data-lat="-7.2719" data-lng="112.7063" class="linked">Zaenal</a></td>
               </tr>
               <tr>
-                <td><a href="#" data-lat="-7.2663" data-lng="112.7063" class="linked">Rahayu</a></td>
+                <td><a href="javascript:void(0);" data-lat="-7.2663" data-lng="112.7063" class="linked">Rahayu</a></td>
               </tr>
               <tr>
-                <td><a href="#" data-lat="-7.2719" data-lng="112.7063" class="linked">Zaenal</a></td>
+                <td><a href="javascript:void(0);" data-lat="-7.2719" data-lng="112.7063" class="linked">Zaenal</a></td>
               </tr>
               <tr>
-                <td><a href="#" data-lat="-7.2663" data-lng="112.7063" class="linked">Rahayu</a></td>
+                <td><a href="javascript:void(0);" data-lat="-7.2663" data-lng="112.7063" class="linked">Rahayu</a></td>
               </tr>
               <tr>
-                <td><a href="#" data-lat="-7.2719" data-lng="112.7063" class="linked">Zaenal</a></td>
+                <td><a href="javascript:void(0);" data-lat="-7.2719" data-lng="112.7063" class="linked">Zaenal</a></td>
               </tr>
             </tbody>
           </table>
@@ -239,7 +239,7 @@
   }
 
   sidebarHeight();
-
+  var markers = [];
    function initMap() {
         var map = new google.maps.Map(document.getElementById('map'), {
           zoom: 15,
@@ -253,12 +253,23 @@
         });
       }
 
+  function setMapOnAll(map) {
+    for (var i = 0; i < markers.length; i++) {
+      markers[i].setMap(map);
+    }
+  }
+
+  function clearMarkers() {
+    setMapOnAll(null);
+  }
+
   function geocodeLatLng(geocoder, map, infowindow) {
         var input = document.getElementById('latlng').value;
         var latlngStr = input.split(',', 2);
         var latlng = {lat: parseFloat(latlngStr[0]), lng: parseFloat(latlngStr[1])};
         geocoder.geocode({'location': latlng}, function(results, status) {
           if (status === 'OK') {
+            clearMarkers();
             if (results[0]) {
               map.setZoom(15);
               var marker = new google.maps.Marker({
@@ -267,6 +278,7 @@
               });
               infowindow.setContent(results[0].formatted_address);
               infowindow.open(map, marker);
+              markers.push(marker);
             } else {
               window.alert('No results found');
             }
