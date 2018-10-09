@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Transition Matrix</title>
+
+    <!-- webpack bundled css -->
+    <link rel="stylesheet" href="css/patternfly.min.css">
+    <link rel="stylesheet" href="css/patternfly-additions.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- webpack bundled dependencies -->
+    <script src="main.bundle.js"></script>
+
+    <!-- Custom Js -->
+    <script src="style.bundle.js"></script>
+
+    <!-- c3.js d3.js bundled dependencies -->
+    <script src="charts.bundle.js"></script>
+  </head>
+  <body class="cards-pf grey">
+
+<!-- nav -->
+<nav class="content-wrapper navbar navbar-default navbar-pf" role="navigation">
+  <div class="navbar-header grey">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse-1">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+        <span class="sr-only">Toggle navigation</span>
+    </a>
+  </div>
+  <div class="collapse navbar-collapse navbar-collapse-1">
+    <ul class="nav navbar-nav navbar-utility">
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+          <span class="pficon pficon-user"></span>
+          Brian Johnson <b class="caret"></b>
+        </a>
+        <ul class="dropdown-menu">
+          <li>
+            <a href="login.html">Logout</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<aside class="main-sidebar">
+  <section class="sidebar">
+  <div class="user-panel">
+    <div class="pull-left image">
+      <img src="img/logic.png" alt="User Image">
+    </div>
+  </div>
+      <ul class="sidebar-menu" data-widget="tree">
+        <li class="header">Navigasi</li>
+         <li class="treeview">
+            <a href="#">
+              <i class="fa fa-folder"></i>
+              <span>Master</span>
+              <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+            </a>
+            <ul class="treeview-menu">
+              <li><a href="site.html"><i class="fa fa-home"></i>Site</a></li>
+              <li><a href="site-map.html"><i class="fa fa-sitemap"></i>Map Of Site</a></li>
+              <li><a href="product-type.html"><i class="fa fa-list-ul"></i>Product Type</a></li>
+              <li><a href="product.html"><i class="fa fa-th-large"></i>Product</a></li>
+              <li><a href="shipment.html"><i class="fa fa-gift"></i>Shipment</a></li>
+              <li><a href="transition-matrix.html"><i class="fa fa-calculator"></i>Transition Matrix</a></li>
+              <li><a href="map-transition.html"><i class="fa fa-map-marker"></i>Map Of Transition Matrix</a></li>
+              <li><a href="carrier-type.html"><i class="fa fa-list-ul"></i>Carrier Type</a></li>
+              <li><a href="carrier.html"><i class="fa fa-car"></i>Carrier</a></li>
+              <li><a href="vehichle-reqruitment.html"><i class="fa fa-calendar"></i>Vehicle Rest Reqruitment </a></li>
+              <li><a href="resource.html"><i class="fa fa-cube"></i>Resource</a></li>
+              <li><a href="site-resource.html"><i class="fa fa-cubes"></i>Site Resource Reqruitment</a></li>
+              <li><a href="shipment-resource.html"><i class="fa fa-cubes"></i>Shipment Resource Reqruitment</a></li>
+            </ul>
+        </li>
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-pencil"></i>
+            <span>Planning</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+              <li><a href="#"><i class="fa fa-list-ol"></i>Scenario</a></li>
+              <li><a href="#"><i class="fa fa-calendar"></i>Avaibility Calendar</a></li>
+              <li><a href="#"><i class="fa fa-file-o"></i>Override Site</a></li>
+              <li><a href="#"><i class="fa fa-users"></i>Override Carrier</a></li>
+              <li><a href="#"><i class="fa fa-gift"></i>Override Shipment</a></li>
+              <li><a href="#"><i class="fa fa-cube"></i>Override Resource</a></li>
+              <li><a href="#"><i class="fa fa-list-ul"></i>Override Vehicle Assignment</a></li>
+          </ul>
+        </li>
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-gears"></i>
+            <span>Optimization</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+              <li><a href="#"><i class="fa fa-lightbulb-o"></i>Solver</a></li>
+          </ul>
+        </li>
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-book"></i>
+            <span>Administration</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+              <li><a href="#"><i class="fa fa-user"></i>User</a></li>
+          </ul>
+        </li>
+    </ul>
+  </section>
+</aside>
+
+
+<div class="content-wrapper container-fluid container-cards-pf">
+  <div class="row row-cards-pf">
+    <div class="card-pf pf-table">
+        <div class="title-pf">
+          <h1>Transition Matrix</h1>
+        </div>
+        <button class="button button-pf blue small-size border-pf float-rg" data-toggle="modal" data-target="#matrix-modal">Add <i class="fa fa-plus"></i></button>
+          <button class="button button-pf orange small-size border-pf float-rg" data-toggle="modal" data-target="#matrix-modal">Edit <i class="fa fa-gear"></i></button>
+         <button class="button button-pf red small-size border-pf float-rg">Delete <i class="fa fa-trash"></i></button>
+
+      <table id="matrix-table" class="table table-striped table-bordered" style="width:100%">
+            <thead>
+                <tr>
+                    <th> 
+                      <label class="customcheck">
+                        <input type="checkbox" onClick="check_uncheck_checkbox(this.checked);">
+                        <span class="checkmark"></span>
+                      </label>
+                    </th>
+                    <th>Name</th>
+                    <th>Active</th>
+                    <th>From</th>
+                    <th>To</th>
+                    <th>Distance</th>
+                    <th>Transit Time</th>
+                    <th>Calculation Method</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                      <label class="customcheck">
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                      </label>
+                    </td>
+                    <td>1</td>
+                    <td>Yes</td>
+                    <td>RE 3002</td>
+                    <td>B. SITI</td>
+                    <td>1.2900</td>
+                    <td>0.1189</td>
+                    <td>Great Circle Distance</td>
+                </tr>
+                <tr>
+                    <td>
+                      <label class="customcheck">
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                      </label>
+                    </td>
+                    <td>2</td>
+                    <td>Yes</td>
+                    <td>RE 3002</td>
+                    <td>B. SITI</td>
+                    <td>1.2900</td>
+                    <td>0.1189</td>
+                    <td>Great Circle Distance</td>
+                </tr>
+                <tr>
+                    <td>
+                      <label class="customcheck">
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                      </label>
+                    </td>
+                    <td>3</td>
+                    <td>Yes</td>
+                    <td>RE 3002</td>
+                    <td>B. SITI</td>
+                    <td>1.2900</td>
+                    <td>0.1189</td>
+                    <td>Great Circle Distance</td>
+                </tr>
+                <tr>
+                    <td>
+                      <label class="customcheck">
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                      </label>
+                    </td>
+                    <td>4</td>
+                    <td>Yes</td>
+                    <td>RE 3002</td>
+                    <td>B. SITI</td>
+                    <td>1.2900</td>
+                    <td>0.1189</td>
+                    <td>Great Circle Distance</td>
+                </tr>
+                <tr>
+                    <td>
+                      <label class="customcheck">
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                      </label>
+                    </td>
+                    <td>5</td>
+                    <td>Yes</td>
+                    <td>RE 3002</td>
+                    <td>B. SITI</td>
+                    <td>1.2900</td>
+                    <td>0.1189</td>
+                    <td>Great Circle Distance</td>
+                </tr>
+            </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<div class="modal-pf modal fade" id="matrix-modal" tabindex="-1" role="dialog" aria-labelledby="myModalAdd" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+          <span class="pficon pficon-close"></span>
+        </button>
+        <h3>Add Transition Matrix</h3>
+      </div>
+      <div class="modal-body">
+        <form> 
+            <div class="form-group">
+              <label>Name</label>
+              <input type="text" class="form-control" required>
+            </div>
+            <div class="form-group">
+              <label class="customcheck">
+                <input type="checkbox"> <span class="text-ck">Active</span>
+                <span class="checkmark"></span>
+              </label>
+            </div>
+            <div class="form-group">
+              <label>From Site</label>
+              <select class="form-control" required>
+                <option value="">-</option>
+                <option value="1">B.siti</option>
+                <option value="2">Rahayu</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>To Site</label>
+              <select class="form-control" required>
+                <option value="">-</option>
+                <option value="1">B.siti</option>
+                <option value="2">Rahayu</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Distance</label>
+              <input type="number" class="form-control" value="0" required>
+            </div>
+            <div class="form-group">
+              <label>Transit Time</label>
+              <input type="number" class="form-control" value="0" required>
+            </div>
+            <div class="form-group">
+              <label>Calculation Method</label>
+              <select class="form-control" required>
+                <option value="">-</option>
+                <option value="1">Predefined</option>
+                <option value="2">Great Circle Distance</option>
+              </select>
+            </div>
+        </form>  
+      </div>
+      <div class="modal-footer">
+          <button class="button button-pf blue float-rg">Create</button>
+          <button class="button button-pf grey float-rg" data-dismiss="modal" >Cancel</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  $(document).ready(function() {
+    $('#matrix-table').DataTable({
+       "pageLength": 10
+    });
+  });
+
+  function check_uncheck_checkbox(isChecked) {
+  if(isChecked) {
+    $('input:checkbox').each(function() { 
+      this.checked = true; 
+    });
+  } else {
+    $('input:checkbox').each(function() {
+      this.checked = false;
+    });
+  }
+}
+</script>
+
+  </body>
+</html>
