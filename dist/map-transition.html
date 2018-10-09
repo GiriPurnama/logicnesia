@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Site</title>
+    <title>Map Of Transition Matrix</title>
 
     <!-- webpack bundled css -->
     <link rel="stylesheet" href="css/patternfly.min.css">
@@ -134,7 +134,7 @@
   <div class="row row-cards-pf">
     <div class="col-md-4">
       <div class="header-pf">
-        <h3>Site</h3>
+        <h3>Map Of Transition Matrix</h3>
       </div>
       <div class="content-pf">
         <div class="card-pf pf-table">
@@ -155,22 +155,16 @@
       </div>
       <form class="mg-10 form-map">
         <div class="form-group">
-          <input type="text" class="form-control" value="KETABANG">
+          <input type="text" class="form-control" value="RE 3002">
         </div>
         <div class="form-group">
-          <input type="text" class="form-control" value="GENTENG">
+          <input type="text" class="form-control" value="B. SITI">
         </div>
         <div class="form-group">
-          <input type="text" class="form-control" value="KOTA SURABAYA">
+          <input type="text" class="form-control" value="1.2900">
         </div>
         <div class="form-group">
           <input type="text" class="form-control" value="JAWA TIMUR">
-        </div>
-        <div class="form-group">
-          <input type="text" class="form-control" value="-7.2663">
-        </div>
-        <div class="form-group">
-          <input type="text" class="form-control" value="112.7063">
         </div>
         <div class="form-group">
           <input type="submit" class="button button-pf blue small-size border-pf" value="Save">
@@ -184,38 +178,8 @@
     </div>
     <div class="map-pf">
         <div id="floating-panel">
-          <!--<b>Start: </b>
-           <select id="start">
-            <option value="st louis, mo">St Louis</option>
-            <option value="Jl. Simo Pomahan I, Simomulyo, Suko Manunggal, Kota SBY, Jawa Timur 60281, Indonesia">Mencoba</option>
-            <option value="joplin, mo">Joplin, MO</option>
-            <option value="oklahoma city, ok">Oklahoma City</option>
-            <option value="amarillo, tx">Amarillo</option>
-            <option value="gallup, nm">Gallup, NM</option>
-            <option value="flagstaff, az">Flagstaff, AZ</option>
-            <option value="winona, az">Winona</option>
-            <option value="kingman, az">Kingman</option>
-            <option value="barstow, ca">Barstow</option>
-            <option value="san bernardino, ca">San Bernardino</option>
-            <option value="los angeles, ca">Los Angeles</option>
-          </select> -->
           <input type="hidden" id="start">
           <input type="hidden" id="end">
-          <!-- <b>End: </b>
-          <select id="end">
-            <option value="st louis, mo">St Louis</option>
-            <option value="Blok 7G, Simo Hilir Bar. IX No.23, Simomulyo, Suko Manunggal, Kota SBY, Jawa Timur 60281, Indonesia">Cibinong</option>
-            <option value="joplin, mo">Joplin, MO</option>
-            <option value="oklahoma city, ok">Oklahoma City</option>
-            <option value="amarillo, tx">Amarillo</option>
-            <option value="gallup, nm">Gallup, NM</option>
-            <option value="flagstaff, az">Flagstaff, AZ</option>
-            <option value="winona, az">Winona</option>
-            <option value="kingman, az">Kingman</option>
-            <option value="barstow, ca">Barstow</option>
-            <option value="san bernardino, ca">San Bernardino</option>
-            <option value="los angeles, ca">Los Angeles</option>
-          </select> -->
         </div>
     </div>
       <div id="map"></div>
@@ -241,8 +205,6 @@
         $("#end").val(end);
         $("#start, #end").click();
         
-        // $("#latlng").val([lat,lng]);
-        // $("#submit").click();
     });
   });
 
