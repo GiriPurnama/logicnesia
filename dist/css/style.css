@@ -1462,6 +1462,7 @@ a.sidebar-toogle:focus{
 }
 .cards-pf.grey {
     /*background: #222d32;*/
+    font-size: 14px;
 }
 
 /*====================== The customcheck ====================================================*/
@@ -1531,18 +1532,6 @@ a.sidebar-toogle:focus{
     top: 1px;
     font-size: 14px;
 }
-/* Style the checkmark/indicator */
-/*.customcheck .checkmark:after {
-    left: 4px;
-    top: 1px;
-    width: 5px;
-    height: 10px;
-    border: solid white;
-    border-width: 0 3px 3px 0;
-    -webkit-transform: rotate(45deg);
-    -ms-transform: rotate(45deg);
-    transform: rotate(45deg);
-}*/
 
 .cards-pf.grey .row-cards-pf:first-child {
     padding-top: 5px;
@@ -1554,8 +1543,24 @@ a.sidebar-toogle:focus{
   padding-bottom: 2px;
 }
 
-.pf-table .dataTables_footer {
+.pf-table .dataTables_footer,
+.modal-pf .dataTables_footer 
+{
     border:none;
+}
+.modal-pf .dataTables_header .dataTables_filter {
+    position: inherit;
+    text-align: left;
+    width: 100%;
+    display: inline-grid;
+}
+.modal-pf .dataTables_header .dataTables_filter input {
+    border: 1px solid #bbb;
+    width: 100%;
+    padding-left: 7px;
+    height: 34px;
+    margin-bottom: -4px;
+    border-radius: 4px;
 }
 .pf-table .dataTables_paginate {
     border: 1px solid #f5f5f5;
@@ -1602,6 +1607,13 @@ a.sidebar-toogle:focus{
 }
 #map-table td:hover{
   background: #d4d4e4;
+};
+table.source-table .source-value{
+  cursor: pointer;
+}
+table.table-source .source-value:hover{
+  background: #0000002b;
+   cursor: pointer;
 }
 /*====================== Table =============================================================*/
 
@@ -1622,10 +1634,22 @@ a.sidebar-toogle:focus{
   border-bottom-left-radius: 5px;
   padding: 0px;
 }
-.modal-pf .form-control{
-  height: 30px;
+.modal-pf .form-control {
+  height: 35px;
+  font-size: 14px;
 }
-
+.modal-pf .button.button-modal {
+  right: -4px;
+  margin-top: -35px;
+  width: 50px;
+  height: 34px;
+  float: right;
+}
+.modal-pf .button.button-modal i{
+  font-size: 24px;
+  top: -7px;
+  position: relative;
+}
 /*========================= Button =============================================================*/
 .button {
     /* min-width: 100px; */
