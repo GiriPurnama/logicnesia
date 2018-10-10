@@ -1592,8 +1592,8 @@ a.sidebar-toogle:focus{
 }
 .content-pf .dataTables_header .dataTables_filter input {
     position: relative;
-    left: 93%;
-    padding: 12px 1px;
+    left: 70%;
+    padding: 14px 1px;
 }
 #map-table a{
   color:#222d32;
