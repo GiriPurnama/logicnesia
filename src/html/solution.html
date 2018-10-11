@@ -211,17 +211,18 @@
 
       var chart = new google.visualization.Gantt(document.getElementById('chart_div'));
 
-      chart.draw(otherData, options);
-
-      google.visualization.events.addListener(chart, 'ready', function() {
-       // grab a few details before redirecting
-      google.visualization.events.addListener(chart.getChart(), 'select', function() {
-          chartObject = chart.getChart();
-          alert(data.getValue(chartObject.getSelection()[0].row, 0));
+      
+       google.visualization.events.addListener(chart, 'select', function () {
+        var selection = chart.getSelection();
+        if (selection.length > 0) {
+          console.log(otherData.getValue(selection[0].row, 0));
+          console.log(otherData.getValue(selection[0].row, 1));
+        }
       });
 
-       //location.href = 'http://www.google.com?row=' + row + '&col=' + col + '&year=' + year;
-     });
+      chart.draw(otherData, options);
+      
+
     }
 
      function initMap() {
