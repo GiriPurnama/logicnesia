@@ -148,8 +148,6 @@
 <div class="content-wrapper container-fluid container-cards-pf">
   <div class="row row-cards-pf">
       <div class="pf-maps">
-      <a href="#" data-start="Jl. Simo Pomahan I, Simomulyo, Suko Manunggal, Kota SBY, Jawa Timur 60281, Indonesia" data-end="
-23, Simo Hilir Bar. IX Blok 7G No.17, Simomulyo, Suko Manunggal, Kota SBY, Jawa Timur 60281, Indonesia" class="linked">1</a>
          <div id="maps"></div>
          <div id="floating-panel">
           <input type="hidden" id="start">
@@ -180,12 +178,14 @@
     overflow: visible;
   }
 
-
-    .svg {
-      width:800px;
-      height:400px;
-      overflow: visible;
-      position:absolute;
+  svg rect {
+      cursor: pointer;
+  }
+  .svg {
+    width:800px;
+    height:400px;
+    overflow: visible;
+    position:absolute;
   }
 
   .grid .tick {
@@ -250,70 +250,34 @@
 
       var taskArray = [
     {
-      task: "conceptualize",
-      type: "development",
+      task: "Pengiriman Kertas",
+      type: "Surabaya",
       startTime: "2013-1-28", //year/month/day
       endTime: "2013-2-1",
-      details: "This actually didn't take any conceptualization"
+      details: "This actually didn't take any conceptualization",
+      shipper: "Jl. Simo Pomahan I, Simomulyo, Suko Manunggal, Kota SBY, Jawa Timur 60281, Indonesia",
+      recipient: "23, Simo Hilir Bar. IX Blok 7G No.17, Simomulyo, Suko Manunggal, Kota SBY, Jawa Timur 60281, Indonesia"
       },
 
       {
-          task: "sketch",
-          type: "development",
+          task: "Pengiriman Pasir",
+          type: "Surabaya",
           startTime: "2013-2-1",
           endTime: "2013-2-6",
-          details: "No sketching either, really"
+          details: "No sketching either, really",
+          shipper: "Jl. Simo Pomahan I, Simomulyo, Suko Manunggal, Kota SBY, Jawa Timur 60281, Indonesia",
+          recipient: "23, Simo Hilir Bar. IX Blok 7G No.17, Simomulyo, Suko Manunggal, Kota SBY, Jawa Timur 60281, Indonesia"
       },
 
-      {
-          task: "color profiles",
-          type: "development",
-          startTime: "2013-2-6",
-          endTime: "2013-2-9"
-      },
 
       {
-          task: "HTML",
-          type: "coding",
+          task: "Pengiriman Plastik",
+          type: "Surabaya",
           startTime: "2013-2-2",
           endTime: "2013-2-6",
-          details: "all three lines of it"
-      },
-
-      {
-          task: "write the JS",
-          type: "coding",
-          startTime: "2013-2-6",
-          endTime: "2013-2-9"
-      },
-
-      {
-          task: "advertise",
-          type: "promotion",
-          startTime: "2013-2-9",
-          endTime: "2013-2-12",
-          details: "This counts, right?"
-      },
-
-      {
-          task: "spam links",
-          type: "promotion",
-          startTime: "2013-2-12",
-          endTime: "2013-2-14"
-      },
-      {
-          task: "eat",
-          type: "celebration",
-          startTime: "2013-2-8",
-          endTime: "2013-2-13",
-          details: "All the things"
-      },
-
-      {
-          task: "crying",
-          type: "celebration",
-          startTime: "2013-2-13",
-          endTime: "2013-2-16"
+          details: "all three lines of it",
+          shipper: "Jl. Simo Pomahan I, Simomulyo, Suko Manunggal, Kota SBY, Jawa Timur 60281, Indonesia",
+          recipient: "23, Simo Hilir Bar. IX Blok 7G No.17, Simomulyo, Suko Manunggal, Kota SBY, Jawa Timur 60281, Indonesia"
       },
 
       ];
@@ -447,7 +411,9 @@
                       "Type: " + d3.select(this).data()[0].type + "<br/>" + 
                       "Starts: " + d3.select(this).data()[0].startTime + "<br/>" + 
                       "Ends: " + d3.select(this).data()[0].endTime + "<br/>" + 
-                      "Details: " + d3.select(this).data()[0].details;
+                      "Details: " + d3.select(this).data()[0].details + "<br/>" + 
+                      "Shipper: " + d3.select(this).data()[0].shipper + "<br/>" +
+                      "Recipient: " + d3.select(this).data()[0].recipient;
                } else {
                 tag = "Task: " + d3.select(this).data()[0].task + "<br/>" + 
                       "Type: " + d3.select(this).data()[0].type + "<br/>" + 
@@ -467,7 +433,13 @@
                var output = document.getElementById("tag");
                output.style.display = "none";
                    }).on('click', function(e) {
-                      console.log(d3.select(this).data()[0].task);
+                      console.log(d3.select(this).data()[0].shipper);
+                      console.log(d3.select(this).data()[0].recipient);
+                      var pengirim = d3.select(this).data()[0].shipper;
+                      var penerima = d3.select(this).data()[0].recipient;
+                      $("#start").val(pengirim);
+                      $("#end").val(penerima);
+                      $("#start, #end").click();
                    });
 
 
@@ -480,7 +452,9 @@
                       "Type: " + d3.select(this).data()[0].type + "<br/>" + 
                       "Starts: " + d3.select(this).data()[0].startTime + "<br/>" + 
                       "Ends: " + d3.select(this).data()[0].endTime + "<br/>" + 
-                      "Details: " + d3.select(this).data()[0].details;
+                      "Shipper: " + d3.select(this).data()[0].shipper + "<br/>" +
+                      "Recipient: " + d3.select(this).data()[0].recipient;
+
                } else {
                 tag = "Task: " + d3.select(this).data()[0].task + "<br/>" + 
                       "Type: " + d3.select(this).data()[0].type + "<br/>" + 
@@ -501,7 +475,13 @@
                output.style.display = "none";
 
       }).on('click', function(e) {
-        // console.log(this);
+          console.log(d3.select(this).data()[0].shipper);
+          console.log(d3.select(this).data()[0].recipient);
+          var pengirim = d3.select(this).data()[0].shipper;
+          var penerima = d3.select(this).data()[0].recipient;
+          $("#start").val(pengirim);
+          $("#end").val(penerima);
+          $("#start, #end").click();
       });
 
 
