@@ -1464,6 +1464,11 @@ a.sidebar-toogle:focus{
     /*background: #222d32;*/
     font-size: 14px;
 }
+.grey .card-pf-aggregate-status .card-pf-title a:active, 
+.grey .card-pf-aggregate-status .card-pf-title a:focus,
+.grey .card-pf-aggregate-status .card-pf-title a:visited{
+  color: #363636 !important;
+}
 
 /*====================== The customcheck ====================================================*/
 .customcheck {
@@ -1797,3 +1802,18 @@ table.table-source .source-value:hover{
   font-size: 17px;
 }
 /*========= Form ==================*/
+
+/*=========== Font Color =============*/
+.info{
+  color: #0088ce !important;
+}
+.warning{
+  color: #ec7a08 !important;
+}
+.danger{
+  color: #cc0000 !important;
+}
+.success{
+  color: #3f9c35 !important;
+}
+/*=========== Font Color =============*/
