@@ -172,9 +172,6 @@
                     <th>Capacity</th>
                     <th>Default Cost</th>
                     <th>Speed</th>
-                    <th>Driving</th>
-                    <th>Working</th>
-                    <th>Rest</th>
                 </tr>
             </thead>
             <tbody>
@@ -193,9 +190,6 @@
                     <td>144,000.0000</td>
                     <td>0.0000</td>
                     <td>19.0000</td>
-                    <td>2</td>
-                    <td>3</td>
-                    <td>1</td>
                 </tr>
                 <tr>
                     <td>
@@ -212,9 +206,6 @@
                     <td>144,000.0000</td>
                     <td>0.0000</td>
                     <td>19.0000</td>
-                    <td>2</td>
-                    <td>3</td>
-                    <td>1</td>
                 </tr>
                 <tr>
                     <td>
@@ -231,9 +222,6 @@
                     <td>144,000.0000</td>
                     <td>0.0000</td>
                     <td>19.0000</td>
-                    <td>2</td>
-                    <td>3</td>
-                    <td>1</td>
                 </tr>
                 <tr>
                     <td>
@@ -250,9 +238,6 @@
                     <td>144,000.0000</td>
                     <td>0.0000</td>
                     <td>19.0000</td>
-                    <td>2</td>
-                    <td>3</td>
-                    <td>1</td>
                 </tr>
                 <tr>
                     <td>
@@ -269,9 +254,6 @@
                     <td>144,000.0000</td>
                     <td>0.0000</td>
                     <td>19.0000</td>
-                    <td>2</td>
-                    <td>3</td>
-                    <td>1</td>
                 </tr>
             </tbody>
       </table>
@@ -291,8 +273,15 @@
       <div class="modal-body">
         <form> 
             <div class="form-group">
-              <label>Type Carrier</label>
-              <input type="text" class="form-control" required>
+              <label>Type</label>
+              <select class="form-control" required>
+                <option value="">-</option>
+                <option value="1">Container</option>
+                <option value="2">Green Color</option>
+                <option value="3">Blue Color</option>
+                <option value="4">Red Color</option>
+                <option value="5">Karimun</option>
+              </select>
             </div>
             <div class="form-group">
               <label>Name</label>
@@ -329,18 +318,6 @@
             </div>
             <div class="form-group">
               <label>Speed</label>
-              <input type="number" class="form-control" value="0" required>
-            </div>
-            <div class="form-group">
-              <label>Driving</label>
-              <input type="number" class="form-control" value="0" required>
-            </div>
-            <div class="form-group">
-              <label>Working</label>
-              <input type="number" class="form-control" value="0" required>
-            </div>
-            <div class="form-group">
-              <label>Rest</label>
               <input type="number" class="form-control" value="0" required>
             </div>
         </form>  
