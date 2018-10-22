@@ -59,6 +59,14 @@
   </div>
   <ul class="sidebar-menu" data-widget="tree">
       <li class="header">Navigasi</li>
+      <li class="">
+          <a href="index.html">
+            <i class="fa fa-tachometer"></i><span>Dashboard</span>
+            <span class="pull-right-container">
+              <!-- <i class="fa fa-angle-left pull-right"></i> -->
+            </span>
+          </a>
+      </li>
        <li class="treeview">
           <a href="#">
             <i class="fa fa-folder"></i>
@@ -68,7 +76,7 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="site.html"><i class="fa fa-home"></i>Site</a></li>
+            <!-- <li><a href="site.html"><i class="fa fa-home"></i>Site</a></li> -->
             <li><a href="site-map.html"><i class="fa fa-sitemap"></i>Map Of Site</a></li>
             <!-- <li><a href="product-type.html"><i class="fa fa-list-ul"></i>Product Type</a></li> -->
             <li><a href="product.html"><i class="fa fa-th-large"></i>Product</a></li>
@@ -147,43 +155,125 @@
 
 <div class="content-wrapper container-fluid container-cards-pf grey">
   <div class="row row-cards-pf">
-    <div class="col-md-4">
+    <div class="col-md-12">
       <div class="header-pf">
         <h3>Site</h3>
       </div>
-      <div class="content-pf">
+      <div class="content-map-pf">
         <div class="card-pf pf-table">
-          <table id="map-table" class="table table-striped table-bordered">
+          <div class="btn-map">
+            <button class="button button-pf blue small-size border-pf float-rg" data-toggle="modal" data-target="#add-modal">Add <i class="fa fa-plus"></i></button>
+            <button class="button button-pf orange small-size border-pf float-rg" data-toggle="modal" data-target="#add-modal">Edit <i class="fa fa-gear"></i></button>
+            <button class="button button-pf red small-size border-pf float-rg">Delete <i class="fa fa-trash"></i></button>
+          </div>
+          <div class="clear"></div>
+          <div class="search_config">
+              <select class="form-control" id="searchCategory">
+                <option value="0">ALL</option>
+                <option value="1">Name</option>
+                <option value="2">Type</option>
+                <option value="3">Site</option>
+                <option value="4">Active</option>
+                <option value="5">Latitude</option>
+                <option value="6">Longtitude</option>
+                <option value="7">Village</option>
+                <option value="8">District</option>
+                <option value="9">Regency</option>
+                <option value="10">Province</option>
+                <option value="11">Country</option>
+                <option value="12">Detail</option>
+                <option value="13">Working Hours</option>
+              </select>
+              <input type="text" class="form-control" name="test" id="inputSearch" placeholder="Search">
+          </div>
+          <table id="map-table" class="table table-striped table-bordered table-hover">
             <thead>
               <tr>
+                <th> 
+                  <label class="customcheck">
+                    <input type="checkbox" onClick="check_uncheck_checkbox(this.checked);">
+                    <span class="checkmark"></span>
+                  </label>
+                </th>
                 <th>Name</th>
+                <th>Type</th>
+                <th>Site</th>
+                <th>Active</th>
+                <th>Latitude</th>
+                <th>Longtitude</th>
+                <th>Village</th>
+                <th>District</th>
+                <th>Regency</th>
+                <th>Province</th>
+                <th>Country</th>
+                <th>Detail</th>
+                <th>Working Hours</th>
               </tr>
             </thead>
             <tbody>
               <tr>
+                <td>
+                  <label class="customcheck">
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                  </label>
+                </td>
                 <td><a href="javascript:void(0);" data-lat="-7.2663" data-lng="112.7063" class="linked">Rahayu</a></td>
+                <td>Warehouse</td>
+                <td>R 3002</td>
+                <td>Yes</td>
+                <td>-7.2563</td>
+                <td>112.7478</td>
+                <td>KETABANG</td>
+                <td>GENTENG</td>
+                <td>KOTA SURABAYA</td>
+                <td>JAWA TIMUR</td>
+                <td>INDONESIA</td>
+                <td>-</td>
+                <td>0</td>
               </tr>
               <tr>
+                <td>
+                  <label class="customcheck">
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                  </label>
+                </td>
                 <td><a href="javascript:void(0);" data-lat="-7.2719" data-lng="112.7063" class="linked">Zaenal</a></td>
+                <td>HUB</td>
+                <td>R 3002</td>
+                <td>Yes</td>
+                <td>-7.2563</td>
+                <td>112.7478</td>
+                <td>SIDOARJO</td>
+                <td>GENTENG</td>
+                <td>KOTA SURABAYA</td>
+                <td>JAWA TIMUR</td>
+                <td>INDONESIA</td>
+                <td>-</td>
+                <td>0</td>
               </tr>
-              <tr>
-                <td><a href="javascript:void(0);" data-lat="-7.2719" data-lng="112.7063" class="linked">Zaenal</a></td>
-              </tr>
-              <tr>
-                <td><a href="javascript:void(0);" data-lat="-7.2663" data-lng="112.7063" class="linked">Rahayu</a></td>
-              </tr>
-              <tr>
-                <td><a href="javascript:void(0);" data-lat="-7.2719" data-lng="112.7063" class="linked">Zaenal</a></td>
-              </tr>
-              <tr>
-                <td><a href="javascript:void(0);" data-lat="-7.2663" data-lng="112.7063" class="linked">Rahayu</a></td>
-              </tr>
-              <tr>
-                <td><a href="javascript:void(0);" data-lat="-7.2719" data-lng="112.7063" class="linked">Zaenal</a></td>
-              </tr>
+             
             </tbody>
           </table>
         </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="header-pf">
+        <h3>Maps</h3>
+      </div>
+      <div class="map-pf">
+        <div id="floating-panel">
+          <input id="latlng" type="hidden" value="-7.2719,112.7063">
+          <input id="submit" type="button" class="hide" value="Reverse Geocode">
+         </div>
+        <div id="map"></div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="header-pf">
+        <h3>Info</h3>
       </div>
       <form class="mg-10 form-map">
         <div class="form-group">
@@ -209,28 +299,121 @@
         </div>
       </form>
     </div>
-    <div class="col-md-8">
-      <div class="header-pf">
-        <h3>Maps</h3>
+  </div>
+</div>
+
+<div class="modal-pf modal fade" id="add-modal" tabindex="-1" role="dialog" aria-labelledby="myModalAdd" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+          <span class="pficon pficon-close"></span>
+        </button>
+        <h3>Add Site</h3>
       </div>
-    </div>
-    <div class="map-pf">
-      <div id="floating-panel">
-      <input id="latlng" type="hidden" value="-7.2719,112.7063">
-      <input id="submit" type="button" class="hide" value="Reverse Geocode">
-    </div>
-      <div id="map"></div>
+      <div class="modal-body">
+        <form> 
+            <div class="form-group">
+              <label>Type</label>
+              <input type="text" class="form-control" required>
+            </div>
+            <div class="form-group">
+              <label>Name</label>
+              <input type="text" class="form-control" required>
+            </div>
+            <div class="form-group">
+              <label>Site</label>
+              <input type="text" class="form-control" required>
+            </div>
+            <div class="form-group">
+              <label class="customcheck">
+                <input type="checkbox"> <span class="text-ck">Active</span>
+                <span class="checkmark"></span>
+              </label>
+            </div>
+            <div class="form-group">
+              <label>Latitude</label>
+              <input type="number" class="form-control" value="0" required>
+            </div>
+            <div class="form-group">
+              <label>Longtitude</label>
+              <input type="number" class="form-control" value="0" required>
+            </div>
+            <div class="form-group">
+              <label>Country</label>
+              <select class="form-control" required>
+                <option value="">-</option>
+                <option value="">Indonesia</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Province</label>
+              <select class="form-control" required>
+                <option value="">-</option>
+                <option value="1">Jawa Barat</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Regency</label>
+              <select class="form-control" required>
+                <option value="">-</option>
+                <option value="1">Kota Bogor</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>District</label>
+              <select class="form-control">
+                <option value="">-</option>
+                <option value="1">Bogor Barat</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Village</label>
+              <select class="form-control">
+                <option value="">-</option>
+                <option value="1">Sindang Barang</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Detail</label>
+              <textarea class="form-control"></textarea>
+            </div>
+            <div class="form-group">
+              <label>Working Hours</label>
+              <input type="text" class="form-control" required>
+            </div>
+        </form>  
+      </div>
+      <div class="modal-footer">
+          <button class="button button-pf blue float-rg">Create</button>
+          <button class="button button-pf grey float-rg" data-dismiss="modal" >Cancel</button>
+      </div>
     </div>
   </div>
 </div>
+
 <script>
   $(document).ready(function() {
     $('#map-table').DataTable({
-       "pageLength": 5,
-       "bInfo" : false,
+       "pageLength": 10,
        "language": {
         searchPlaceholder: "Search"
        }
+    });
+
+    var table = $('#map-table').DataTable();
+
+    $("#searchCategory").change(function() {
+      var title = $(this).val();
+    })
+    
+    $('#inputSearch').on( 'keyup', function () {
+        var valueColumn = $("#searchCategory").val();
+        if (valueColumn == 0 || valueColumn == "") {
+          table.search(this.value).draw();
+        } else {
+          table.column(valueColumn).search(this.value).draw();
+        }
     });
 
     $( ".linked" ).click(function() {
@@ -242,14 +425,26 @@
         $("#latlng").val([lat,lng]);
         $("#submit").click();
     });
-  });
 
-  var card =  $(".row-cards-pf").height();
+  });
+  function check_uncheck_checkbox(isChecked) {
+    if(isChecked) {
+      $('input:checkbox').each(function() { 
+        this.checked = true; 
+      });
+    } else {
+      $('input:checkbox').each(function() {
+        this.checked = false;
+      });
+    }
+  }
+
+  var card =  $(".container-cards-pf").height();
   var sidebar = $(".main-sidebar").height();
 
   function sidebarHeight(){
     if (card >= sidebar) {
-        $(".main-sidebar").height(sidebar + 200);      
+        $(".main-sidebar").height(sidebar + 350);      
     };
   }
 
