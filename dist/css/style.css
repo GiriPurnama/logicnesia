@@ -1475,6 +1475,10 @@ a.sidebar-toogle:focus{
 .content-map-pf .dataTables_wrapper{
   margin-top: 0px;
 }
+#filterBox{
+  margin: 20px 0px;
+  width: 20%;
+}
 /*====================== The customcheck ====================================================*/
 .customcheck {
     display: block;

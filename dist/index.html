@@ -155,8 +155,18 @@
 <div class="content-wrapper container-fluid container-cards-pf">
 
   <!-- status cards -->
+  <div class="col-md-12">
+    <select id="filterBox" class="form-control">
+      <option value="all">ALL</option>
+      <option value="totalTrip">Total Trip</option>
+      <option value="totalDN">Total DN</option>
+      <option value="DNLate">DN Late</option>
+      <option value="DNOngoing">DN Ongoing</option>
+      <option value="DNCompeleted">DN Compeleted</option>
+    </select>
+  </div>
    <div class="row row-cards-pf">
-     <div class="col-xs-12 col-md-3">
+     <div class="col-xs-12 col-md-3 hideBox" id="totalTrip">
        <div class="card-pf card-pf-accented card-pf-aggregate-status">
          <h2 class="card-pf-title">
            <a href=""><span class="fa fa-book info"></span>Total Trip</a>
@@ -168,7 +178,7 @@
          </div>
        </div>
      </div>
-     <div class="col-xs-12 col-md-2">
+     <div class="col-xs-12 col-md-2 hideBox" id="totalDN">
        <div class="card-pf card-pf-accented card-pf-aggregate-status">
          <h2 class="card-pf-title">
            <a href="#"><span class="fa fa-book info"></span>Total DN</a>
@@ -180,7 +190,7 @@
          </div>
        </div>
      </div>
-     <div class="col-xs-12 col-md-2">
+     <div class="col-xs-12 col-md-2 hideBox" id="DNLate">
        <div class="card-pf card-pf-accented card-pf-aggregate-status">
          <h2 class="card-pf-title">
            <a href="#"><span class="fa fa-info-circle warning"></span>DN Late</a>
@@ -192,7 +202,7 @@
          </div>
        </div>
      </div>
-     <div class="col-xs-12 col-md-2">
+     <div class="col-xs-12 col-md-2 hideBox" id="DNOngoing">
        <div class="card-pf card-pf-accented card-pf-aggregate-status">
          <h2 class="card-pf-title">
            <a href=""><span class="fa fa-hourglass-2 info"></span> DN Ongoing</a>
@@ -204,7 +214,7 @@
          </div>
        </div>
      </div>
-     <div class="col-xs-12 col-md-3">
+     <div class="col-xs-12 col-md-3 hideBox" id="DNCompeleted">
        <div class="card-pf card-pf-accented card-pf-aggregate-status">
          <h2 class="card-pf-title">
            <a href="#"><span class="fa fa-check-circle success"></span>DN Compeleted</a>
@@ -500,6 +510,16 @@
       var sideHeight = $(".container-cards-pf").height();;
       $(".main-sidebar").height(sideHeight + 75);
     });
+
+     $("#filterBox").change(function() {
+       var title = $(this).val();
+       if (title == "all") {
+         $(".hideBox").fadeIn("slow"); 
+       } else {
+         $(".hideBox").hide();
+         $('#' + $(this).val()).fadeIn("slow");
+       }
+     })
 
   </script>
 
