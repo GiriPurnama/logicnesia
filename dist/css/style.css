@@ -1699,6 +1699,7 @@ table.table-source .source-value:hover{
     vertical-align: inherit;
     position: relative;
     z-index: 1;
+    width: 100px;
     -webkit-backface-visibility: hidden;
     -moz-osx-font-smoothing: grayscale;
 }
