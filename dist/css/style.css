@@ -1444,6 +1444,35 @@
     background:#FFF;
     height: 30px;
 }
+.navbar-pf .navbar-header.grey {
+  border-bottom: none;
+  float: none
+}
+.grey .navbar-pf .navbar-utility>li>a {
+  border-left: none;
+  color: #1a2226!important;
+  padding: 7px 10px
+}
+.grey .navbar-pf .navbar-utility>li>a:hover {
+  background: #FFF;
+  border-left-color: none
+}
+.grey .navbar-pf .navbar-utility>.active>a,
+.grey .navbar-pf .navbar-utility>.active>a:focus,
+.grey .navbar-pf .navbar-utility>.active>a:hover,
+.grey .navbar-pf .navbar-utility>.open>a,
+.grey .navbar-pf .navbar-utility>.open>a:focus,
+.grey .navbar-pf .navbar-utility>.open>a:hover {
+    background: #FFF;
+    color: #1a2226
+}
+.navbar-pf .navbar-utility>li.open>a {
+  border-left-color: #444;
+  color: #1a2226!important;
+}
+.container-cards-pf {
+  margin-top: 0px;
+}
 .sidebar-toggle:before {
     content: "\f0c9";
 }
